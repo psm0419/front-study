@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1 {
+            margin: 30px;
+            border: 2px dashed blue;       /* 밑이랑 설정 같음 한번에 작성가능 */
+            padding: 5px;                   /* 컨텐츠 영역 */
+            width: 200px;                   /* 외부 보더 패딩 사이즈 바귀면 계속 바꿔줘야함 */
+            height: 100px;                  /* 그래서 보더박스 사이징을 함 */
+
+            display: inline-block;
+        }
+
+        .box2 {
+            margin: 50px 15px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: blue;
+
+            width: 200px;
+            height: 100px;
+            box-sizing: border-box;         /* 200 100 으로 맞추기 위해 알아서 조정 */
+
+            display: inline-block;
+        }
+        /*
+        display 속성
+        block   : 한줄을 다 차지(가로줄), 줄바꿈, 사이즈(width, height), 여백 적용
+        inline  : 내용 공간만큼만 차지, 같은줄 나란히 배치, 사이즈 적용x, 여백 가로 적용
+        inline-block    : block처럼 속성 적용(사이즈, 여백), 
+                        요소들 간 상호작용은  inline 취급(같은 줄에 나란히 배치)
+        none    : 표시X (숨김역할)
+        */
+    </style>
+
+</head>
+
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <span>span1</span>
+    <span>span2</span>
+
+
+
+</body>
+
+</html>

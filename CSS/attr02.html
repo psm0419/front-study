@@ -8,7 +8,8 @@
 
     <style>
         .font-test {
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Times New Roman', Times, serif;       
+            /* 앞에있는거 없으면 뒤에 적용 */
             font-size: 44px;
             font-variant: small-caps;
             /* 소문자를 소문자크기로 대문자표시 */
@@ -47,8 +48,10 @@
         .ins-span {
             text-decoration: underline;
         }
-
-        /* 앞에있는거 없으면 뒤에 적용 */
+        a {
+            text-decoration: none;   /* 기본적으로 가지고 있던 장식 지움 */
+        }
+    
     </style>
 
 </head>
@@ -65,7 +68,7 @@
         <span class="del-span">del span</span>
         <span class="ins-span">ins span</span>
     </div>
-
+<a href="https://naver.com">네이버로 가라</a>
 </body>
 
 </html>
