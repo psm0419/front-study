@@ -7,18 +7,20 @@
 
     <style>
         h1 {color: orange;}
-        h2 {color: orange;}
-        span {color: blue;}
+        h2 {color: orange;}  /* 같은색이면 h1, h2로 통합가능 */
+        span {color: blue;}  /* class(.) 쓰면 여러개 가능 .color-blue {color: blue} */
+                                /* <h2 class="color-blue"> <p class="color-blue"> */
     </style>
 
 </head>
 <body>
     <h1>제1회 봄빛 수목원 여름꽃 축제</h1>
     <h2>수련·수국·무궁화·원추리</h2>
-    <h2 style="color: blue;">아름다운 여름꽃과 시원한 바다를 ....</h2>
+    <p style="color: blue;">아름다운 여름꽃과 시원한 바다를 ....</p>
 
     <ul>
         <li>일시 : <span>6월 15일 부터 8월 15일 까지</span></li>
+            <!-- 인라인 특정 영역만 span(스팬이 여러개면 id부여), div 로 가능 -->
         <li >장소 : 봄빛 수목원 일원</li>
     </ul>
 </body>
