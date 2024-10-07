@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p:first-child {color: red;}
+        p:last-child {color: blue;}
+        /* p:nth-child(3) {color: green;} 그냥 세번째 */ 
+        /* p:nth-of-type(3) {color: green;}  p 태그중에 3번째*/
+        p:nth-of-type(2n) {color: green;} /* 2n(even) 짝수번째 2n+1(odd) 홀수번째 */
+
+        /* div.box  붙어있으면 and   ,는 or   스페이스바는 하위자식전체 */
+        /* 위는 div이면서 클래스이름이 box */
+    </style>
+
+</head>
+<body>
+    <div>
+        <p>p1</p>
+        <p>p2</p>
+        <p>p3</p>
+        <p>p4</p>
+        <p>p5</p>
+        <p>p6</p>        
+    </div>
+
+    <div>
+        <p>p1</p>
+        <span>p2</span>
+        <p>p3</p>
+        <span>p4</span>
+        <p>p5</p>
+        <p>p6</p>
+    </div>
+
+    <div>
+        <p>p1</p>
+        <span>p2</span> 
+        <span>p4</span>
+        <p>p3</p>
+        <p>p5</p>
+        <p>p6</p>
+    </div>
+</body>
+</html>

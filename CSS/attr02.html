@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .font-test {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 44px;
+            font-variant: small-caps;
+            /* 소문자를 소문자크기로 대문자표시 */
+            letter-spacing: 1px;
+            /* 자간, 기본 1px */
+            line-height: 2em;
+            /* 행간 */
+        }
+
+        /* margin:top, right, bottom, left 순  위랑 아래 겹친것은 큰것으로 적용 */
+        /* ex) margin:30px 30px 30px 10px; */
+
+
+        .font-box {
+            font-size: 24px;
+        }
+
+        .p2-inbox {
+            font-size: 1.5em;
+            /* 부모요소 크기의 1.5배 */
+            font-style: italic;
+            text-align: center;
+        }
+
+        .p3-inbox {
+            font-size: 1.5rem;
+            /* html 크기의 1.5배 */
+            font-weight: bold;
+            /* 700 진하게 bold  글씨체 별로 다름 */
+        }
+
+        .del-span {
+            text-decoration: line-through;
+        }
+
+        .ins-span {
+            text-decoration: underline;
+        }
+
+        /* 앞에있는거 없으면 뒤에 적용 */
+    </style>
+
+</head>
+
+<body>
+    <p>기본 텍스트</p>
+    <p class="font-test">P Text test</p>
+    <p class="font-test">글자 테스트</p>
+
+    <div class="font-box">
+        <p>박스안에 글자 111</p>
+        <p class="p2-inbox">박스안에 글자 222</p>
+        <p class="p3-inbox">박스안에 글자 333</p>
+        <span class="del-span">del span</span>
+        <span class="ins-span">ins span</span>
+    </div>
+
+</body>
+
+</html>
