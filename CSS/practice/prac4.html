@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .box {
+            border: 1px solid black;
+            background-color: lightgray;
+            width: 300px;
+            float: left;
+        }
+        /* .container .box img  클래스없이 쓰려면 이렇게 */
+        .box-img {
+            float: left;
+            width: 150px;
+        }
+        
+        .container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="../../html/tag/sample.jpg" class="box-img">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore iusto ex soluta, exercitationem
+                accusantium atque facilis ullam, iste placeat amet aliquid aperiam voluptatum? Dolorem, facilis vel
+                adipisci rerum vero doloremque?</p>
+        </div>
+        <div class="box">
+            <img src="../../html/tag/sample.jpg" class="box-img">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore iusto ex soluta, exercitationem
+                accusantium atque facilis ullam, iste placeat amet aliquid aperiam voluptatum? Dolorem, facilis vel
+                adipisci rerum vero doloremque?</p>
+        </div>
+    </div>
+</body>
+
+</html>
