@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            /* transition은 상속이 안돼서 부모에 걸면 안됨 */
+            background-color: lightgray;
+            position: relative;
+        }
+
+        .box {
+            /* 공통 클래스인 박스에 걸면 동시에 적용 */
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            transition-property: all;
+            transition-duration: 2s;
+        }
+
+        .container:hover {
+            .red {
+                width: 400px;
+            }
+
+            .blue {
+                background-color: purple;
+            }
+
+            .black {
+                transform: translate(200px);
+            }
+        }
+
+        .green:hover {
+            border: 7px solid red;
+        }
+
+        .yellow:hover {
+            border: 7px solid red;
+        }
+
+
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .yellow {
+            background-color: yellow;
+            position: absolute;
+            top: 300px;
+            left: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box red"></div>
+        <div class="box blue"></div>
+        <div class="box black"></div>
+        <div class="box green"></div>
+        <div class="box yellow"></div>
+    </div>
+</body>
+
+</html>
