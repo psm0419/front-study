@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            animation-name: box-ani;
+            animation-duration: 3s;
+            animation-delay: 1s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            animation-direction: alternate;
+        }
+            /* 애니매이션 한번에하기
+            name duration timing delay interation direction fillmode play state 순 */
+
+        .box:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes box-ani {
+            0% {
+                background-color: red;
+                width: 200px;
+            }
+
+            50% {
+                background-color: green;
+                width: 300px;
+            }
+
+            100% {
+                background-color: blue;
+                width: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>
