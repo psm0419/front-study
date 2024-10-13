@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .top-navi {
+            background-color: white;
+            height: 150px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        .nav1 {
+            display: flex;
+            background-color: rgb(243, 241, 241);
+            width: 100%;
+
+        }
+
+        .empty {
+            width: 150px;
+            height: 40px;
+        }
+
+        .nav1-1 {
+            display: flex;
+            border: 1px solid #dfdfdf;
+            width: 140px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav1-2 {
+            display: flex;
+            width: 170px;
+            height: 40px;
+            border: 1px solid #dfdfdf;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav1-3 {
+            display: flex;
+            width: 110px;
+            height: 40px;
+            border: 1px solid #dfdfdf;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav1-4 {
+            display: flex;
+            width: 120px;
+            height: 40px;
+            border: 1px solid #dfdfdf;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav1-5 {
+            display: flex;
+            width: 185px;
+            height: 40px;
+            border: 1px solid #dfdfdf;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav1-6 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 70px;
+        }
+
+        .nav2 {
+            display: flex;
+            width: 100%;
+            height: 90px;
+
+            justify-content: space-evenly;
+
+        }
+
+        .nav2-1 {
+            display: flex;
+            width: 139px;
+            height: 90px;
+            background-image: url(../../../images/lotte\ aqua.png);
+            background-size: 150px 90px;
+            background-repeat: no-repeat;
+            margin-left: 180px;
+
+        }
+
+        .nav2-2 {
+            display: flex;
+            width: 125px;
+            height: 90px;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+        .sub-menu{
+            width: 200%;
+            height: 440px;
+            border: 1px solid black;
+            background-color: white;
+            position: absolute;
+            top: 130px;
+            z-index: 2;
+            display: none;
+        }
+        .nav2-2:hover .sub-menu {
+            display: block;
+        }
+        .nav2-3:hover .sub-menu {
+            display: block;
+        }
+        .nav2-4:hover .sub-menu {
+            display: block;
+        }
+        .nav2-5:hover .sub-menu {
+            display: block;
+        }
+        .nav2-6:hover .sub-menu {
+            display: block;
+        }
+        .nav2-7:hover .sub-menu {
+            display: block;
+        }
+        .nav2-3 {
+            display: flex;
+            width: 125px;
+            height: 90px;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .nav2-4 {
+            display: flex;
+            width: 125px;
+            height: 90px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav2-5 {
+            display: flex;
+            width: 125px;
+            height: 90px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav2-6 {
+            display: flex;
+            width: 125px;
+            height: 90px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav2-7 {
+            display: flex;
+            width: 125px;
+            height: 90px;
+            align-items: center;
+            justify-content: center;
+            margin-right: 180px;
+        }
+
+        .main1 {
+            display: flex;
+            background-image: url(https://www.lotteworld.com/aquarium/_img/main/bg_top.jpg);
+            width: 1280px;
+            height: 380px;
+            position: relative;
+        }
+
+        .m1-text {
+
+            width: 750px;
+            height: 300px;
+            padding-top: 40px;
+            padding-left: 210px;
+            color: white;
+            position: relative;
+        }
+
+        .click {
+            display: flex;
+            width: 125px;
+            height: 35px;
+            border: 3px solid white;
+            top: 80px;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .m1-img {
+            display: flex;
+            background-image: url(../../../images/10th.PNG);
+            background-size: 200px 150px;
+            width: 200px;
+            height: 150px;
+            position: relative;
+            left: 140px;
+            top: 70px;
+
+        }
+
+        .main2 {
+            display: flex;
+            justify-content: center;
+
+
+            position: relative;
+            width: 1280px;
+            height: 408px;
+            background-image: url(https://www.lotteworld.com/aquarium/_img/main/now_bg02.jpg);
+        }
+
+        .m2-contain {
+            flex-wrap: wrap;
+            display: flex;
+            border: 1px outset #e7dcdc;
+            width: 968px;
+            height: 408px;
+            color: white;
+
+        }
+
+        .m2-top {
+            display: flex;
+            width: 968px;
+            height: 40px;
+            border: 1px outset #e7dcdc;
+        }
+
+        .top-1 {
+            border: 1px outset #e7dcdc;
+            display: flex;
+            width: 240px;
+            height: 40px;
+            padding: 10px;
+        }
+
+        .top-2 {
+
+            display: flex;
+            width: 728px;
+            height: 40px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .m2-main {
+            display: flex;
+
+            width: 968px;
+            height: 368px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m2-mian1 {
+            display: flex;
+            flex-wrap: wrap;
+
+            width: 240px;
+            height: 368px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m2-main1::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .m2-main2 {
+            display: flex;
+            flex-wrap: wrap;
+
+            width: 728px;
+            height: 368px;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .m-text {
+            display: flex;
+            justify-content: center;
+        }
+
+        .m21-1 {
+            border: 1px outset #e7dcdc;
+            padding: 10px;
+            width: 240px;
+            height: 128px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m21-2 {
+            border: 1px outset #e7dcdc;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            float: left;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m21-3 {
+            border: 1px outset #e7dcdc;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            float: left;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m21-4 {
+            border: 1px outset #e7dcdc;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m21-5 {
+            border: 1px outset #e7dcdc;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            float: left;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m21-6 {
+            border: 1px ridge #e7dcdc;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            float: left;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m21-7 {
+            border: 1px ridge #e7dcdc;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m21-8 {
+            border: 1px ridge #e7dcdc;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            float: left;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m21-9 {
+            border: 1px ridge #e7dcdc;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            float: left;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m21-10 {
+            border: 1px ridge #e7dcdc;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bottom {
+            width: 1280px;
+            height: 458px;
+            background-image: url(../../../images/aqua2.PNG);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .b-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 5px;
+        }
+
+        .b-mid {
+            position: relative;
+        }
+
+        .bmid-1 {
+            width: 256px;
+            height: 110px;
+            position: relative;
+            top: 250px;
+            left: 250px;
+        }
+
+        .bmid-2 {
+            width: 256px;
+            height: 110px;
+            position: relative;
+            top: 140px;
+            left: 500px;
+        }
+
+        .bmid-3 {
+            width: 256px;
+            height: 110px;
+            position: relative;
+            top: 30px;
+            left: 770px;
+        }
+
+        .bm-text1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: yellow;
+        }
+
+        .bm-text2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .bm-box1 {
+            display: flex;
+            width: 125px;
+            height: 35px;
+            border: 3px solid white;
+            top: 20px;
+            left: 60px;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .bottom2 {
+            display: flex;
+            width: 1280px;
+            height: 458px;
+            justify-content: center;
+            align-items: center;
+            background-image: url(https://www.lotteworld.com/aquarium/_img/main/bg_btm02.jpg);
+        }
+
+        .banner {
+            display: flex;
+            width: 960px;
+            height: 240px;
+            background-color: lightgray;
+
+        }
+
+        .ban-box1 {
+            width: 240px;
+            height: 240px;
+        }
+
+        .tx1 {
+            display: flex;
+            border-bottom: 1px solid black;
+            height: 60px;
+            justify-content: left;
+            align-items: center;
+
+        }
+
+        .ban-box2 {
+            display: flex;
+            border: 1px solid black;
+            width: 240px;
+            height: 240px;
+            background-image: url(../../../images/mul.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+
+        .bb2-t {
+            width: 240px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ban-box3 {
+            display: flex;
+            border: 1px solid black;
+            width: 240px;
+            height: 240px;
+            background-image: url(../../../images/geobuk.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+
+        .ban-box4 {
+            border: 1px solid black;
+            width: 240px;
+            height: 240px;
+
+        }
+
+        .tx3 {
+            border-bottom: 1px solid black;
+            display: flex;
+            width: 240px;
+            height: 120px;
+
+        }
+
+        .tx4 {
+            display: flex;
+            width: 240px;
+            height: 120px;
+        }
+
+        .bot-tx1 {
+
+            display: flex;
+            width: 120px;
+            height: 120px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bot-tx2 {
+            display: flex;
+            width: 120px;
+            height: 120px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tximg1 {
+            display: flex;
+            width: 120px;
+            height: 120px;
+            background-image: url(../../../images/dol.png);
+        }
+
+        .tximg2 {
+            display: flex;
+            width: 120px;
+            height: 120px;
+            background-image: url(../../../images/dol2.png);
+        }
+
+        .footer {
+            font-size: 12px;
+            text-decoration: none;
+            z-index: 1;
+            display: block;
+            width: 182px;
+            height: 109px;
+            background: url('https://www.lotteworld.com/aquarium/_img/common/ico_chatbot_aquarium.png') no-repeat center center;
+            right: 20px;
+            position: fixed;
+            bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-navi">
+        <div class="nav1">
+            <div class="empty"></div>
+            <div class="nav1-1">
+                <p>롯데월드 어드벤처</p>
+            </div>
+            <div class="nav1-2">
+                <p>롯데월드 어드벤쳐 부산</p>
+            </div>
+            <div class="nav1-3">
+                <p>SEOUL SKY</p>
+            </div>
+            <div class="nav1-4">
+                <p>롯데워터파크</p>
+            </div>
+            <div class="nav1-5">
+                <p>롯데월드 아쿠아리움 하노이</p>
+            </div>
+            <div class="nav1-6">
+                <select>
+                    <optgroup label="Language">
+                        <option value="Korean">Korean</option>
+                        <option value="English">English</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="nav2">
+            <div class="nav2-1"></div>
+            <div class="nav2-2">
+                <p>아쿠아리움 소개</p>
+                <div class="sub-menu"></div>
+            </div>
+            <div class="nav2-3">
+                <p>프로그램·이벤트</p>
+                <div class="sub-menu"></div>
+            </div>
+            <div class="nav2-4">
+                <p>이용안내</p>
+                <div class="sub-menu"></div>
+            </div>
+            <div class="nav2-5">
+                <p>온라인예매</p>
+                <div class="sub-menu"></div>
+            </div>
+            <div class="nav2-6">
+                <p>단체 안내</p>
+                <div class="sub-menu"></div>
+            </div>
+            <div class="nav2-7">
+                <p>고객소리함</p>
+                <div class="sub-menu"></div>
+            </div>
+        </div>
+        <div class="main1">
+            <div class="m1-text">
+                <p style="font-size: 30px; font-weight: bold;">아쿠아리움 10주년 릴레이 페스티벌</p>
+                <p style="font-size: 20px; font-weight: lighter;">일 선착순 10명 50% / 100명 43% 할인!</p>
+                <p style="font-size: 20px; font-weight: lighter;">2024년 10월 14일(월) ~ 10월 31일(목)</p>
+                <div class="click">
+                    <p style="font-size: 15px; font-weight: lighter;">자세히 보기 ></p>
+                </div>
+            </div>
+            <div class="m1-img"></div>
+            <div class="control"></div>
+
+        </div>
+        <div class="main2">
+            <div class="m2-contain">
+                <div class="m2-top">
+                    <div class="top-1">
+                        <p style="font-size: 15px;">아쿠아리움 365</p>
+                    </div>
+                    <div class="top-2">
+                        <div>
+                            <p style="font-size: 15px;">주요 프로그램</p>
+                        </div>
+                        <div>
+                            <p>더보기</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="m2-main">
+                    <div class="m2-main1">
+                        <div class="m21-1">
+                            <p style="font-size: 15px;">아쿠아리움 운영시간</p>
+                            <br>
+                            <div><img src="https://www.lotteworld.com/aquarium/_img/common/iconLink1.gif"> <span
+                                    style="font-size: 25px;">10:00 ~ 22:00</span></div>
+                        </div>
+                        <div class="m21-2">
+                            <p>이용요금</p>
+                        </div>
+                        <div class="m21-3">
+                            <p>우대정보</p>
+                        </div>
+                        <div class="m21-4">
+                            <p>DIY 활동지</p>
+                        </div>
+                        <div class="m21-5">
+                            <p>층별안내</p>
+                        </div>
+                        <div class="m21-6">
+                            <p>단체프로그램</p>
+                        </div>
+                        <div class="m21-7">
+                            <p>고객의 소리</p>
+                        </div>
+                        <div class="m21-8">
+                            <p>교통·주차</p>
+                        </div>
+                        <div class="m21-9">
+                            <p>편의시설</p>
+                        </div>
+                        <div class="m21-10">
+                            <p>장애인 <br> 편의제도</p>
+                        </div>
+                    </div>
+                    <div class="m2-main2">
+                        <div class="m22-1">
+                            <img src="https://www.lotteworld.com/_upload/CM0428/CM0428_4.png">
+                            <p class="m-text">먹이주는 시간</p>
+                        </div>
+                        <div class="m22-2">
+                            <img src="https://www.lotteworld.com/_upload/CM0428/CM0428_6.png">
+                            <p class="m-text">신나는 이벤트</p>
+                        </div>
+                        <div class="m22-3">
+                            <img src="https://www.lotteworld.com/_upload/CM0428/CM0428_1.png">
+                            <p class="m-text">교육/단체 프로그램</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="b-top">
+                <img src="https://www.lotteworld.com/aquarium/_img/main/now_title.png">
+            </div>
+            <div class="b-mid">
+                <div class="bmid-1">
+                    <div class="bm-text1">
+                        <h3>아쿠라리스트가 궁금해요!</h3>
+                    </div>
+                    <div class="bm-text2">
+                        <span>톡톡 터지는 아쿠아리스트의<br>특별한 이야기</span>
+                    </div>
+
+                    <div class="bm-box1">
+                        <p style="font-size: 15px; font-weight: bold;">자세히 보기 ></p>
+                    </div>
+                </div>
+                <div class="bmid-2">
+                    <div class="bm-text1">
+                        <h3>바다 친구들의 수다</h3>
+                    </div>
+                    <div class="bm-text2">
+                        <span>재잘재잘 바다친구들의<br>알고 싶은 이야기</span>
+                    </div>
+                    <div class="bm-box1">
+                        <p style="font-size: 15px; font-weight: bold;">자세히 보기 ></p>
+                    </div>
+                </div>
+                <div class="bmid-3">
+                    <div class="bm-text1">
+                        <h3>반갑다 친구야</h3>
+                    </div>
+                    <div class="bm-text2">
+                        <span>안녕~안녕~<br>궁금한 친구들을 만나보세요!</span>
+                    </div>
+                    <div class="bm-box1">
+                        <p style="font-size: 15px; font-weight: bold;">자세히 보기 ></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom2">
+            <div class="banner">
+                <div class="ban-box1">
+                    <div class="tx1">
+                        <h2>공지사항</h2>
+                    </div>
+                    <div class="tx1">
+                        <p>[공지]하노이 아쿠아리움 입장권</p>
+                    </div>
+                    <div class="tx1">
+                        <p>[공지]개인정보처리방침 변경안내</p>
+                    </div>
+                    <div class="tx1">
+                        <p>[공지]밸루가 소식</p>
+                    </div>
+                </div>
+                <div class="ban-box2">
+                    <div class="bb2-t">인스타그램</div>
+                </div>
+                <div class="ban-box3">
+                    <div class="bb2-t">페이스북</div>
+                </div>
+                <div class="ban-box4">
+                    <div class="tx3">
+                        <p class="bot-tx1">아쿠아리움 우대정보</p>
+                        <div class="tximg1"></div>
+                    </div>
+
+                    <div class="tx4">
+                        <p class="bot-tx2">아쿠아리움 기념상품</p>
+                        <div class="tximg2"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+
+    </div>
+</body>
+
+</html>
