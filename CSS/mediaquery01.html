@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 300px;
+            height: 400px;
+            background-color: beige;
+        }
+
+        .sub-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .content {
+            font-size: 16px;
+        }
+
+        /* @media not print and (max-width: 768px)
+        @media only screen and (max-width: 850px) and (min-width: 500px) */
+
+        @media screen and (max-width:768px) {
+            .box {
+                background-color: lightgray;
+            }
+        }
+
+        @media screen and (max-width:450px) {
+            .box {
+                background-color: lightblue;
+            }
+            .sub-title {
+                font-size: 16px;
+                font-weight: normal;
+            }
+            .content {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>제목</h2>
+        <p class="sub-title">서브타이틀</p>
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque iste, dolor dolorem autem dolorum commodi
+            sit eaque perferendis magnam maiores debitis voluptatum labore obcaecati, harum at repudiandae sequi
+            deleniti magni.</p>
+    </div>
+</body>
+
+</html>

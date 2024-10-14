@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .em-box {
+            font-size: 20px;
+            background-color: lightblue;
+            width: 700px;
+            min-width: 500px; 
+            /* 미디어쿼리마다 걸면 번거로우니 미리 최소값 걸어둠 */
+        }
+        .em1 {font-size: 1.2em;}
+        .em2 {font-size: 1.5em;}
+        .em3 {font-size: 2em;}
+
+        /*
+            em  부모 폰트 사이즈 대비
+            rem html 폰트 사이즈 대비
+        */
+
+        .rem1 {font-size: 1.5rem;}
+        .rem2 {font-size: 2rem;}
+
+        .footer {font-size: 2rem;}
+
+        @media screen and (max-width:700px) {
+            .em-box {width: 100%;} /* %로 쓰면 자동으로 작아짐 */
+        }
+
+        @media screen and (max-width:500px) {
+            .em-box {
+                font-size: 16px;
+                /* width: 500px; */
+            }
+
+            html {font-size: 10px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="em-box">
+        <p class="em1">em1</p>
+        <p class="em2">em2</p>
+        <p class="em3">em3</p>
+    </div>
+    <div class="rem-box">
+        <p class="rem1">rem1</p>
+        <p class="rem2">rem2</p>
+    </div>
+
+    <div class="footer">
+        <p>footer1</p>
+        <p>footer2</p>
+    </div>
+    <p>basic p tag</p>
+</body>
+</html>
