@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            margin: 0 auto;
+            width: 500px;
+            height: 530px;
+            background-color: darkslategray;
+            
+        }
+        .header {
+            display: flex;
+            width: 400px;
+            background-color: gray;
+            margin: 50px;
+            
+            
+        }
+        .header a {
+            display: flex;
+            width: 50%;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
+        .log-in {
+            display: flex;
+            width: 50%;
+            height: 50px;
+            background-color: seagreen;
+            justify-content: center;
+            align-items: center;
+        }
+        .text {
+            color: white;
+            text-align: center;
+        }
+        
+        #email {            
+            width: 400px;
+            height: 30px;
+            border: 1px solid white;    
+            margin: 50px;      
+            background-color: darkslategray;
+            
+        }
+        #password {            
+            width: 400px;
+            height: 30px;
+            border: 1px solid white;      
+            margin: 50px;      
+            background-color: darkslategray; 
+        }
+        .footer a {
+            display: flex;
+            width: 400px;
+            height: 50px;
+            background-color: seagreen;
+            margin: 50px;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="./signup.html"><p>Sign Up</p></a>
+            <div class="log-in">Log In</div>
+        </div>
+        <div class="text">
+            <p style="font-size: 20px;">Welcome Back!</p>
+        </div>
+    
+        <input type="email" id="email" placeholder="Email Address *"></input>
+        <input type="password" id="password" placeholder="Password *"></input>
+        
+        <div class="footer">
+            <a href="./main.html"><p style="font-size: 20px;">LOG IN</p></a>
+        </div>
+    </div>
+
+</body>
+</html>
