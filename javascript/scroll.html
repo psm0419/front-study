@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 5000px;
+            height: 5000px;
+        }
+        #container{
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <button onclick="sct()">scrollTo</button>
+    <button onclick="scb()">scrollBy</button>
+    </div>
+
+    <script>
+        function sct(){//그냥 값 넣는법, 객체형태로 넣는법
+            //window.scrollTo(0, 0);
+            window.scrollTo( { //객체로 넣는법
+                left:0, 
+                top:0,
+                behavior:'smooth'
+            } ); 
+        }
+        function scb(){
+            //window.scrollBy(200, 100);
+            window.scrollBy({
+                left:500,
+                top:500,
+                behavior:'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

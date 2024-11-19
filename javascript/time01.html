@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: darkgreen;
+            position: relative;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <p id="target"></p>
+    <div class="box"></div>
+    <p id="clock"></p>
+    <button onclick="clearItv()">박스 움직임 종료</button>
+
+    <script>
+
+        setTimeout(() => {
+            console.log('3초 지남');
+            document.getElementById('target').textContent = '3초 지났음';
+        }, 3000);
+
+        setTimeout(() => {
+            document.getElementById('target').style.color = 'red';
+        }, 5000);
+
+        let boxMoveItv = setInterval(() => { //인덱스 0까지 명시해야 찾아짐(1개라 0)
+            const box = document.getElementsByClassName('box')[0];
+            //console.log(box.style.left);
+            if(box.style.left == '' || box.style.left == '600px'){ //600되면 50으로 초기화
+                box.style.left = 50+'px';
+            }else {
+                let leftValue = box.style.left;
+                leftValue = leftValue.replace('px','');
+
+                box.style.left = Number(leftValue) + 50 + 'px';
+            }
+            box.style.left = box.style.left + 50;
+        }, 1000);
+
+        let clockItv = setInterval(() => {
+            const current = new Date();
+            //RPAD, LPAD -> padStart, padEnd
+            const time = String(current.getHours()).padStart(2, '0') 
+            + ":" + String(current.getMinutes()).padStart(2, '0') 
+            + ":" + String(current.getSeconds()).padStart(2, '0') ;
+            document.getElementById('clock').textContent = time;
+        }, 1000);
+
+        function clearItv(){
+            clearInterval(boxMoveItv);
+            clearInterval(clockItv);
+        }
+    </script>
+</body>
+</html>
