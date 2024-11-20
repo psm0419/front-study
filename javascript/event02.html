@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .blue{
+            color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+    <p id="pid">textextext</p>
+    <a id= "aid" href="https://naver.com">네이버로 링크</a>
+    <div id="container">
+
+    </div>
+
+    <p id="target"></p>
+    
+    <script>
+        //document.getElementById('pid').style.color = 'green';
+        document.getElementById('pid').classList.add('red'); //클래스 리스트라 이름만
+        document.getElementById('pid').classList.add('blue');//나중에 적용된게 이김
+        document.getElementById('pid').classList.remove('blue');
+
+        const aEle = document.querySelector('#aid');
+        console.log(aEle.getAttribute('href'));
+        aEle.setAttribute('href', 'https://netflix.com');
+        aEle.setAttribute('target', '_blank'); //없었던 속성 넣어줌
+
+        //aEle color red
+        aEle.style.color = 'red';
+        aEle.classList.add('red');          //class='값' +red(추가)
+        aEle.setAttribute('class', 'red');  //class=원래 있던값 없애고 새로세팅
+        aEle.removeAttribute('target');
+
+        const divCon = document.getElementById('container');
+
+        const newEle = document.createElement("p"); //p태그
+        const textEle = document.createTextNode('p태그안에 text'); //텍스트
+        const attEle = document.createAttribute("class"); //class 속성
+        attEle.value = "blue"; //class 속성 값에 추가
+
+        divCon.appendChild(newEle); //div에 p태그 추가
+        newEle.appendChild(textEle); //p태그 내부에 텍스트 추가
+        newEle.setAttributeNode(attEle); //p태그에 속성 추가
+
+        document.getElementById('target').innerHTML = "<strong>p target text</strong>";
+        //이렇게 한번에 넣기도 가능
+
+        //노드삭제
+        //부모노드.removeChild(자식노드);
+        //부모, 자식노드를 찾는 방법이 다양. 쿼리셀렉터, 퍼스트 차일드 등등
+    </script>
+</body>
+</html>

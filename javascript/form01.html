@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>form01</h1>
+    
+    <form action="" id="frm_main">
+        아이디<input type="text" id ="input_id" value="myid"><br/>
+        비번<input type="password" id ="input_pw" placeholder="비밀번호 입력"><br/>
+        <button id = "btn_btn" type="button">단순버튼</button>
+        <button id = "btn_submit" type="submit">제출(submit역할)</button>
+    </form>
+    
+    <img src="https://cdn.pixabay.com/photo/2023/03/28/09/29/tulip-7882705_1280.jpg" onload="complt()">
+
+    <script>
+        const btn_btn = document.querySelector('#btn_btn');
+        const btn_submit = document.querySelector('#btn_submit');
+
+        const frm_main = document.querySelector('#frm_main');
+
+        
+
+        //submit은 form한테 걸어야함
+        frm_main.addEventListener('submit', (event)=>{ //매개변수 넣어두면 이벤트정보 들어옴
+            console.log('form submit 이벤트 발생');
+            event.preventDefault(); //기본 발생 이벤트 취소 (submit은 다른페이지로 폼 전송->새로고침)
+            //form action="" 작성된 경로로 전송
+            //다른경로 -> 다른경로페이지로 이동
+            //비어있으면 동일페이지 상태 새로고침
+            //전송
+            if(input_id.value == ''){
+            alert('아이디 좀 입력해주세요');
+            return; //이상 있으면 여기서 멈춤?            
+        }
+        //필터링 검증 단계
+
+        //submit 발생
+        frm_main.submit(); //이상 없으면 서브밋 강제 발생
+        });
+        
+        
+
+        btn_btn.addEventListener('click', ()=>{console.log('btn_btn click');});
+        btn_submit.addEventListener('click', ()=>{console.log('btn_submit click');});
+
+        console.log(document.getElementById("input_id").value);
+        console.log(document.querySelector('#input_pw').value);
+
+        document.querySelector('#input_pw').value='abcde';
+
+        const input_id = document.getElementById("input_id");
+
+        input_id.addEventListener('keydown',()=>{console.log('키다운 발생');});
+        input_id.addEventListener('keypress',()=>{console.log('키프레스 발생');});
+        input_id.addEventListener('keyup',()=>{console.log('키업 발생');});
+
+        input_id.addEventListener('focus',()=>{console.log('포커스됨');});
+        input_id.addEventListener('blur',()=>{console.log('블러됨');});
+
+        function complt(){
+            console.log('이미지 로딩');
+        }
+        window.onload = ()=>{ //온로드 쓰는경우가 있다면 보통 이런식
+            //브라우저 최상위 객체 window 창 기준으로 모든 페이지정보가 로딩 된 이후 처리
+            //화면 먼저 보여주고 뒤에서 프로세스 처리하는 용도
+        }
+    </script>
+</body>
+</html>

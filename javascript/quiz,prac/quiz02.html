@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .back-red {
+            background-color: red;
+        }
+
+        .back-blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button onclick="changeColor()">배경색 바꾸기</button>
+
+    <script>
+
+        function changeColor() {
+            const change = prompt("1 또는 2를 입력하세요. 1.빨간색 2.파란색")
+            const element = document.querySelector(".box"); //여러개일때는 all
+            if (change == 1) {
+                element.classList.remove("back-blue");
+                element.classList.add("back-red");
+                //element.setAttribute('class', 'box back-red'); box 안사라지게 같이 써줌
+            } else if (change == 2) {
+                element.classList.remove("back-red");
+                element.classList.add("back-blue");
+            } else { //빈칸 잘못입력 취소 전부 여기
+                alert("잘못 입력 했습니다.");
+            }
+        }
+    </script>
+</body>
+
+</html>
