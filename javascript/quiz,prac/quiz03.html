@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<style>
+.back-gray {
+            background-color: 'rgb(169, 169, 169)';
+        }
+.text-red {
+    color: rgb(255, 0, 0);
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div id="main">
+<p id="p1">p1 텍스트</p>
+<p id="p2">p2 텍스트</p>
+</div>
+</div>
+<button onclick="changeMain()">main 배경색 gray로 변경</button>
+<button onclick="changeP1()">p1 글자색 red로 변경</button>
+<button onclick="changeP2()">"p2 텍스트"를 "p2 글자" 로 변경</button>
+<button onclick="mainWhite()">main 배경색 white로 변경</button>
+<button onclick="p1Black()">p1 글자색 black으로 변경</button>
+
+
+<script>
+    function changeMain() { //누를때마다 회색, 흰색으로 변경
+        document.getElementById("main").classList.toggle("back-gray");
+        //document.querySelector("#main").classList.add("back-gray");    
+        //document.getElementById("main").style.backgroundColor = 'rgb(169, 169, 169)';
+        if (document.getElementById("main").style.backgroundColor === 'rgb(169, 169, 169)') {        
+            mainWhite();
+        } else {        
+        document.getElementById("main").style.backgroundColor = 'rgb(169, 169, 169)';
+        }
+        //토글로도 가능 document.getElementById("main").classList.toggle("back-gray");
+        //let mainFlag = 1;이런식으로 선언하고 if문에 숫자 1,0 바꾸면서 넣어도 가능
+        //.classList.contains('back-gray') 괄호안에 있는 클래스가 존재하는지 확인
+    }
+    function changeP1() {
+        //document.querySelector("#p1").classList.add("text-red");
+        //document.getElementById("p1").style.color = 'red';
+        if(document.getElementById("p1").style.color === 'rgb(255, 0, 0)'){
+            p1Black();
+        } else{
+            document.getElementById("p1").style.color = 'rgb(255, 0, 0';
+        }
+    }
+    let idx=0;
+    function changeP2() {
+        const p2 = document.querySelector("#p2");
+        //document.querySelector("#p2").innerText = 'p2 글자';
+        /*if(p2.innerText == 'p2 텍스트'){ //textContent로도 가능
+            p2.innerText = 'p2 글자';
+        } else if(p2.innerText == 'p2 글자'){
+            p2.innerText = 'p2 하나';
+        } else if(p2.innerText == 'p2 하나'){
+            p2.innerText = 'p2 둘';
+        }else if(p2.innerText == 'p2 둘'){
+            p2.innerText = 'p2 셋';
+        }else if(p2.innerText == 'p2 셋'){
+            p2.innerText = 'p2 넷';
+        }else if(p2.innerText == 'p2 넷'){
+            p2.innerText = 'p2 텍스트';
+        }//배열으로 인덱스 변경해도 가능
+        */        
+        const textArr = ['p2 텍스트', 'p2 글자','p2 하나','p2 둘','p2 셋','p2 넷'];
+        idx++;
+        if(idx == textArr.length){
+            idx=0;
+        }
+        p2.textContent = textArr[idx];
+    }
+    function mainWhite() {        
+        document.getElementById("main").style.backgroundColor = 'white';
+        //스타일에 추가한거면 단순히 remove로 클래스 지우면 원래대로 돌아감.
+    }
+    function p1Black() {            
+        document.getElementById("p1").style.color = 'black';
+    }
+    /*
+    +++++ 응용버전
+    버튼을 2개 추가합니다.
+    추가버튼 1. main 배경색을 white 로 다시 변경하기
+    추가버튼 2. p1 글자색 다시 black 로 다시 변경하기
+
+    +++++ 응용버전2
+    main 배경색 gray로 변경 버튼을 누를때마다 배경색 적용/해제가 작동함
+    p1 글자색 red로 변경 버튼을 누를때마다 글자색 적용/해제가 작동함
+
+    "p2 텍스트"를 "p2 글자" 로 변경 버튼을 누를때마다 글자가 아래 순서대로 계속 바뀜.
+
+    p2 텍스트
+    p2 하나
+    p2 둘
+    p2 셋
+    p2 넷
+    p2 텍스트
+    ...(계속 순환)
+    */
+</script>
+
+
+</body>
+</html>
