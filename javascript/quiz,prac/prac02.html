@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="frm_main">
+        <input type="text" id="loginId" placeholder="아이디" class="empty1"><br>
+        <input type="password" id="loginPw" placeholder="비밀번호" class="empty2"><br>
+        <button id="btnLogin" onclick="tryLogin()">로그인 시도</button><br>
+    </form>
+    <script>
+        function tryLogin() {
+            
+            const empty1 = document.getElementsByClassName('empty1')[0].value;
+            const empty2 = document.getElementsByClassName('empty2')[0].value;
+            
+            if(empty1.trim() == ""){   
+                alert("아이디를 입력하세요");
+                document.getElementById('loginId').value = "";
+                document.getElementById('loginPw').value = "";
+                document.getElementById('loginId').focus();
+            }else if(empty2.trim() == ""){
+                alert("비밀번호를 입력하세요");
+                document.getElementById('loginpw').value = "";
+                document.getElementById('loginPw').focus();
+            }else if(empty1.trim() == "" && empty2.trim() == ""){
+                alert("아이디를 입력하세요");
+                document.getElementById('loginId').value = "";
+                document.getElementById('loginPw').value = "";
+                document.getElementById('loginId').focus();
+            } else{
+                document.getElementById('loginId').value = "";
+                document.getElementById('loginPw').value = "";  
+            }
+            
+        };
+        document.getElementById('loginId').addEventListener('keydown', (event) => {
+            console.log(event.key);
+            
+            if (event.keyCode == 13) { // 13은 엔터
+                document.getElementById('loginPw').focus();
+                event.preventDefault();
+            }
+        });
+        document.getElementById('loginPw').addEventListener('keydown', (event) => {
+            if (event.keyCode == 13) {
+                //같은 코드 사용
+                //같은 함수 호출
+                //로그인버튼을 눌러버리기 버튼주소.click();
+                //버튼주소.focus();  버튼은 포커스 넘어가면서 눌림효과 발생
+                tryLogin();
+                event.preventDefault();
+                document.getElementById('loginId').focus();
+            }
+        });
+
+        document.getElementById('frm_main').addEventListener('submit', (event)=>{
+            event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

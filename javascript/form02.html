@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="frm_main">
+        아이디<input type="text" id ="input_id" value="myid"><br/>
+        비번<input type="password" id ="input_pw" placeholder="비밀번호 입력"><br/>
+        <button id = "btn_btn" type="button">단순버튼</button>
+        <button id = "btn_submit" type="submit">제출(submit역할)</button>
+
+        <br>
+        치즈<input type="checkbox" id="chb_cs" class="chb_option">
+        크림<input type="checkbox" id="chb_cr" class='chb_option'>
+        시럽<input type="checkbox" id="chb_sr" class='chb_option'>
+        <button type="button" id="btn_fullOption">모든 옵션 선택</button>
+
+        <br>
+        대<input type="radio" id="rd_l" name="size" value="large">
+        중<input type="radio" id="rd_m" name="size" value="medium">
+        <!-- name=size value=""
+            String name = "medium";  서버에 넘어갈때는 밸류값으로 인식
+        -->
+        <br>
+        <select id="selectType"> 
+            <option value="here">매장</option>
+            <option value="togo" selected>포장</option>
+            <option value="delv">배달</option>
+        </select>
+    </form>
+
+    <script>
+        document.getElementById('btn_btn').addEventListener('click', ()=>{
+            document.getElementById('selectType').focus();
+        });
+
+        console.log(document.getElementById('selectType').value);
+        //셀렉된 것의 밸류를 출력
+        const selectTypeOptions = document.querySelectorAll('#selectType > option');
+        // > 자식 선택자
+        for(let option of selectTypeOptions){
+            console.log(option.value + " " +option.selected );
+        }
+
+        console.log(document.getElementById('input_id').value);
+        document.getElementById('input_pw').value = 'abcde';
+
+        console.log(document.getElementById('chb_cs').checked); //false
+        document.getElementById('chb_cr').checked = true;
+
+        console.log(document.getElementById('rd_l').checked); //false
+        document.getElementById('rd_m').checked = true;
+
+        document.getElementById('btn_fullOption').addEventListener('click', ()=>{
+            /*
+            document.getElementById('chb_cs').checked = true;
+            document.getElementById('chb_cr').checked = true;
+            document.getElementById('chb_sr').checked = true;
+            */
+
+            const chbArr = document.getElementsByClassName('chb_option');
+            for(let i =0; i<chbArr.length; i++){
+                //chbArr[i].checked = true;
+                chbArr[i].checked = !chbArr[i].checked;
+            }
+        });
+
+        document.getElementById('frm_main').addEventListener('submit', (event)=>{
+            event.preventDefault();
+        });
+        //시나리오
+        //제출 버튼을 누를때, 만약 체크박스 옵션이 한개도 선택되어 있지 않으면
+        //옵션 1개는 필수입니다! 경고창 표시
+        const chbArr = document.getElementsByClassName('chb_option');
+        document.getElementById('btn_submit').addEventListener('click', ()=>{
+        let count=0;
+        for(let i =0; i<chbArr.length; i++){
+                if(chbArr[i].checked){
+                    count++;
+                }
+            }
+        if(count == 0){
+            alert('옵션 1개는 필수 입니다.');
+        }
+    });
+
+        let result = false;
+        for(let i =0; i<chbArr.length; i++){
+                if(chbArr[i].checked){
+                    result= true;
+                    break;
+                }
+            }
+        if(result == false){
+            alert('옵션 1개는 필수 입니다.');
+        }
+        //모든 검증 끝
+        // /document.getElementById('frm_main').submit();
+    </script>
+</body>
+</html>
